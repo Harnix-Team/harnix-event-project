@@ -1,0 +1,423 @@
+/*
+    This code was done by @Valeryio
+    Things you have to review in this code.
+
+    - DRY process, you have to clean this code from
+    all the code redundancy that it had
+    - Deleting all the inused scss from the code
+    - Work on the responsive on the code
+*/
+/*Positionning mixins*/
+/*Colored mixin*/
+/*Reseting mixins*/
+body {
+  font-family: jost;
+  background: #F0EFF5;
+}
+
+.grid {
+  display: grid;
+  grid-template-rows: 464px 650px;
+  grid-template-columns: 100px 320px 320px 320px 320px 100px;
+}
+
+header {
+  height: 88px;
+  margin: 0 0 40px 0;
+  background: white;
+  padding: 0 24px 0 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+header .secondary_navbar {
+  width: 1080px;
+  min-width: 90%;
+  margin: auto;
+  display: flex;
+}
+header .secondary_navbar .active {
+  color: black;
+  text-decoration: none;
+  color: #FC6C29;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+}
+
+.return_link {
+  margin-right: 256px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.return_link a {
+  color: black;
+  text-decoration: none;
+  transition: all ease-in-out 0.2s;
+}
+.return_link a:hover {
+  color: #381DDB;
+}
+
+.profil_presentation {
+  margin: auto;
+  min-width: 1280px;
+  height: 440px;
+  grid-row: 1/span 1;
+  grid-column: 2/span 4;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+  background-color: white;
+  transition: all ease-in-out 0.5s;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.profil_presentation .profil_presentation__banner {
+  width: 100%;
+}
+.profil_presentation .profil_presentation__profile {
+  left: 50px;
+  bottom: 75px;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+}
+.profil_presentation .profil_presentation__informations {
+  display: flex;
+  padding: 16px;
+  padding: 0 128px 0 216px;
+  background: white;
+}
+
+.profil_presentation:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.profil_presentation__informations .job {
+  color: #190F6C;
+  margin-right: 400px;
+}
+.profil_presentation__informations h2 {
+  margin-bottom: 0;
+  font-family: "roboto";
+}
+.profil_presentation__informations button {
+  width: 290px;
+  min-width: 256px;
+  height: 56px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 1rem;
+  border-radius: 40px;
+  transform: translateY(40%);
+  background-color: #381DDB;
+}
+.profil_presentation__informations button span {
+  margin-right: 10px;
+}
+
+aside {
+  width: 300px;
+  height: 632px;
+  overflow: hidden;
+  font-size: 1.2rem;
+  padding: 16px 32px;
+  background: white;
+  grid-row: 2/span 1;
+  grid-column: 2/span 1;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+aside h3 {
+  color: #381DDB;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+aside .aside__informations {
+  display: flex;
+  color: #666666;
+  flex-direction: column;
+  justify-content: start;
+}
+aside .aside__notifications {
+  width: 95%;
+  height: 64px;
+  margin: 20px 0 0 0;
+  border-radius: 4px;
+  font-weight: 600;
+  position: relative;
+  z-index: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, #381DDB, #FC6C29);
+}
+aside .aside__notifications::before {
+  top: 2px;
+  left: 2px;
+  content: "";
+  position: absolute;
+  width: 98%;
+  height: 94%;
+  z-index: -2;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.aside__informations div {
+  width: 216px;
+  height: 76px;
+  border-bottom: 1px solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+.aside__informations div span {
+  margin-left: 16px;
+}
+
+.aside__notifications__number {
+  width: 40px;
+  height: 40px;
+  margin: 0 0 0 20px;
+  background: #D9D9D9;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  width: 960px;
+  overflow: hidden;
+  padding: 20px 40px;
+  margin-bottom: 100px;
+  border-radius: 16px;
+  grid-row: 2/span 2;
+  grid-column: 3/span 2;
+  background-color: white;
+  font-family: "Roboto", "sans-serif";
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+main h1 {
+  color: #381DDB;
+}
+main p {
+  width: 80%;
+}
+main .events_categories {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  overflow: auto;
+  padding: 8px 16px;
+  margin: 32px 0 56px 0;
+  background: #EEEEEE;
+}
+main .choosed_category {
+  width: 100%;
+  height: 256px;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+main .choosed_category:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+main .notification_box {
+  width: 90%;
+  height: 112px;
+  padding: 20px;
+  border-radius: 16px;
+  background: #D8D8D8;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+
+.events_categories .category {
+  color: #381DDB;
+  min-width: 176px;
+  height: 64px;
+  outline: none;
+  font-weight: 600;
+  margin-left: 24px;
+  background: white;
+  border-radius: 32px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  border: 2px solid #381DDB;
+}
+.events_categories::-webkit-scrollbar {
+  width: 1px;
+  height: 4px;
+}
+
+.choosed_category .badge {
+  padding: 8px;
+  width: fit-content;
+  color: #381DDB;
+  font-weight: 600;
+  background-color: #F3F1FD;
+  border: 2px dashed #381DDB;
+}
+.choosed_category .choices {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  overflow: auto;
+  padding: 8px 16px;
+  margin: 32px 0 56px 0;
+  background: white;
+}
+
+.choices button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  min-width: 176px;
+  height: 64px;
+  outline: none;
+  font-weight: 600;
+  margin-left: 24px;
+  background: linear-gradient(to right, #381DDB, #FC6C29);
+  border-radius: 32px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  border: 0 solid #381DDB;
+}
+
+.notification_box > * {
+  margin-right: 40px;
+}
+.notification_box .notification_box__consult {
+  display: flex;
+  display: flex;
+}
+.notification_box .notification_box__consult a {
+  font-size: 20px;
+  margin-right: 8px;
+}
+.notification_box .notification_box__consult img {
+  height: 24px;
+  display: inline;
+}
+
+.modification_profile {
+  color: #190F6C;
+}
+.modification_profile form > div:first-child {
+  display: flex;
+  height: 880px;
+  padding: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 56px;
+  justify-content: start;
+  flex-direction: column;
+}
+.modification_profile h3 {
+  color: #381DDB;
+}
+
+.modification_profile__form_personnal {
+  margin: 0 32px 40px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.modification_profile__form_personnal input {
+  display: block;
+  width: 345px;
+  height: 48px;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.modification_profile__form_description {
+  width: 400px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.modification_profile__form_description textarea {
+  resize: none;
+  width: 345px;
+  height: 150px;
+  padding: 20px;
+  font-size: 14px;
+  border-radius: 4px;
+  font-family: "roboto", "sans-serif";
+}
+
+.modification_profile__form_password button {
+  width: 345px;
+  height: 48px;
+  outline: none;
+  font-size: 16px;
+  border-radius: 8px;
+  background-color: white;
+  border: 1px solid black;
+  transition: all ease-in-out 0.6s;
+}
+.modification_profile__form_password button:hover {
+  font-weight: 500;
+}
+
+.modification_profile__form_profil,
+.modification_profile__form_banner {
+  padding-left: 40px;
+  border-left: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.modification_profile__form_profil input,
+.modification_profile__form_banner input {
+  left: 40px;
+  position: absolute;
+}
+
+.modification_profile__form_profil img,
+.modification_profile__form_banner img {
+  margin-bottom: 16px;
+}
+
+.modification_profile__form_profil label,
+.modification_profile__form_banner label {
+  display: block;
+  width: 256px;
+  height: 48px;
+  color: white;
+  font-size: 16px;
+  margin-left: 20px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+  background: black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.modification_profile__submit_modifications button {
+  width: 364px;
+  height: 64px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 50%;
+  margin-bottom: 64px;
+  border-radius: 40px;
+  background: #381DDB;
+  transform: translateX(-50%);
+}
+
+/*# sourceMappingURL=profil.css.map */

@@ -1,0 +1,331 @@
+body {
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.5s, color 0.5s;
+}
+body.color-change header {
+  background-color: #555;
+  color: white;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+body.color-change header .functionality-container {
+  display: flex;
+  border: 1px solid #ffffff;
+  padding: 8px 7px;
+  border-radius: 15px;
+}
+body.color-change header h1 {
+  margin: 0;
+  flex-grow: 1;
+  text-align: center;
+  background: linear-gradient(to right, #ff1100, #8aa2f3);
+  -webkit-background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+header {
+  padding: 15px 0;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+header .header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+header .header-container h1 {
+  margin: 0;
+  flex-grow: 1;
+  text-align: center;
+  background: linear-gradient(to right, #fda737, #0407c0);
+  -webkit-background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+header .header-container .functionality-container {
+  display: flex;
+  border: 1px solid #000;
+  padding: 8px 7px;
+  border-radius: 15px;
+}
+header .header-container .functionality-container i {
+  cursor: pointer;
+  font-size: 20px;
+  margin-left: 10px;
+}
+header .header-container .functionality-container i:hover {
+  opacity: 0.8;
+}
+header .header-container .functionality-container #sunBtn:hover {
+  color: #FFD700;
+}
+header .header-container .functionality-container #moonBtn:hover {
+  color: #708090;
+}
+
+.main-container {
+  display: flex;
+}
+
+.side-bar {
+  width: 2cm;
+  background-color: #131572;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+.side-bar .icon-container {
+  display: flex;
+  flex-direction: column;
+}
+.side-bar .icon-container i {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.side-bar .icon-container i:hover {
+  opacity: 0.8;
+}
+
+.session-a-droite {
+  width: 100%;
+  display: block;
+}
+.session-a-droite .horizontal-bar {
+  box-shadow: 0px 5px 10px rgba(1, 0, 0, 0);
+  background-color: #eceaea;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+.session-a-droite .second-container {
+  align-items: center;
+  display: block;
+  margin-left: 15%;
+}
+.session-a-droite .second-container .class-event {
+  margin-left: 0;
+  justify-content: space-between;
+}
+.session-a-droite .second-container .class-event .class-sous-event {
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #f0aa42;
+  border-radius: 25px;
+  width: 100%;
+  margin: 10px 0;
+}
+@media (min-width: 768px) {
+  .session-a-droite .second-container .class-event .class-sous-event {
+    width: 48%;
+    margin: 10px 1%;
+  }
+}
+.session-a-droite .second-container .class-event .class-sous-event .bas-img-event {
+  margin: 10px 10px;
+}
+.session-a-droite .second-container .class-event .class-sous-event .class-info {
+  background-color: #eeb79e;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin: 8px 16px;
+  width: 88%;
+}
+@media (min-width: 768px) {
+  .session-a-droite .second-container .class-event .class-sous-event .class-info {
+    width: 90%;
+  }
+}
+.session-a-droite .second-container .class-event .class-sous-event .class-info .class-sous-info {
+  padding: 5px 5px;
+  border-right: 1px solid #000;
+}
+.session-a-droite .second-container .class-event .class-sous-event .span-session {
+  display: flex;
+}
+.session-a-droite .second-container .class-event .class-sous-event .span-session .petit-span {
+  margin-right: 5px;
+  background-color: #f5f5f5;
+}
+.session-a-droite .second-container .class-event .class-sous-event .img-sous-event {
+  width: 100%;
+}
+.session-a-droite .second-container .class-event .class-sous-event .gerer-event-btn-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 35px;
+}
+.session-a-droite .second-container .class-event .class-sous-event .gerer-event-btn-div .gerer-event-btn {
+  background: linear-gradient(to right, #fda737, #0407c0);
+  border: none;
+  border-radius: 25px;
+  margin-right: 10px;
+  cursor: pointer;
+  color: #fff;
+  padding: 15px 10px;
+}
+.session-a-droite .second-container .class-event .class-sous-event .gerer-event-btn-div .gerer-event-btn:hover {
+  opacity: 0.8;
+}
+.session-a-droite .second-container .status-icons {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.session-a-droite .second-container .status-icons i {
+  font-size: 24px;
+  margin: 5px;
+  color: #000000;
+}
+.session-a-droite .second-container .completed {
+  color: #000000;
+}
+.session-a-droite .second-container .class-event {
+  width: 80%;
+}
+.session-a-droite .second-container .retourBtn {
+  background: linear-gradient(to right, #fda737, #0407c0);
+  border: none;
+  border-radius: 25px;
+  margin-right: 10px;
+  cursor: pointer;
+  color: #fff;
+  padding: 15px 10px;
+}
+.session-a-droite .second-container .retourBtn:hover {
+  opacity: 0.8;
+}
+.session-a-droite .second-container .suivantBtn {
+  background: linear-gradient(to right, #fda737, #c02004);
+  border: none;
+  margin-right: 10px;
+  cursor: pointer;
+  color: #fff;
+  padding: 15px 10px;
+}
+.session-a-droite .second-container .suivantBtn:hover {
+  opacity: 0.8;
+}
+.session-a-droite .search-bar {
+  padding: 5px;
+  background-color: #fff;
+  width: 30%;
+  border: 1px solid #ffffff;
+  border-radius: 15px;
+  padding: 5px 8px;
+}
+.session-a-droite .search-bar input {
+  width: 90%;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+}
+.session-a-droite .action-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.session-a-droite .action-buttons .create-event-btn {
+  background: linear-gradient(to right, #fda737, #0407c0);
+  padding: 8px 15px;
+  border: none;
+  border-radius: 15px;
+  margin-right: 10px;
+  cursor: pointer;
+  color: #fff;
+}
+.session-a-droite .action-buttons .create-event-btn:hover {
+  opacity: 0.8;
+}
+.session-a-droite .action-buttons .profile-circle {
+  width: 30px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.session-a-droite .action-buttons .profile-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+footer {
+  background-color: #fff;
+}
+footer .text_harnix {
+  color: #ff6600;
+}
+footer .footer-block1 {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+footer .footer-block1 .left-section p {
+  margin: 0;
+}
+footer .footer-block1 .center-section nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+footer .footer-block1 .center-section nav li > a {
+  text-decoration: none;
+  color: black;
+  position: relative;
+}
+footer .footer-block1 .center-section nav li > a:hover {
+  color: rgb(255, 174, 0);
+}
+footer .footer-block1 .center-section nav li > a:active {
+  color: rgb(255, 174, 0);
+}
+footer .footer-block1 .center-section nav li > a:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: rgb(255, 174, 0);
+  transition: width 0.3s;
+}
+footer .footer-block1 .center-section nav li > a:hover:after, footer .footer-block1 .center-section nav li > a:active:after {
+  width: 100%;
+}
+footer .footer-block1 .right-section {
+  display: flex;
+}
+footer .footer-block1 .right-section i {
+  margin-right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #000000;
+}
+footer .divider {
+  width: 100%;
+  border: 1px solid #ccc;
+  margin: 0;
+}
+footer .footer-block2 {
+  text-align: center;
+  padding: 20px;
+}
+footer .footer-block2 p {
+  margin: 0;
+}
+footer .footer-block2 .footer-links a {
+  color: #000;
+  margin: 0 10px;
+}
+
+/*# sourceMappingURL=modification-event-step1.css.map */

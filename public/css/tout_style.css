@@ -1,0 +1,320 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  background-color: #ffffff;
+}
+
+header {
+  color: white;
+  text-align: center;
+  position: relative;
+}
+header .header-block1 {
+  background: linear-gradient(to right, #ff9100, #401ce2);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .header-block1 h1 {
+  margin: 0;
+  color: #fff;
+  font-size: 1.5rem;
+  transition: color 0.3s ease-in-out;
+}
+header .header-block1 .search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 17px;
+  padding: 8px;
+  margin-right: 10px;
+}
+header .header-block1 .search-bar input {
+  border: none;
+  padding: 8px;
+  border-radius: 17px;
+  outline: none;
+}
+header .header-block1 .search-bar button {
+  padding: 8px 15px;
+  background-color: #000;
+  color: white;
+  cursor: pointer;
+  border: 1px solid #000;
+  border-radius: 15px;
+  margin-left: 10px;
+}
+header .header-block1 .search-bar button i {
+  margin-right: 5px;
+}
+header .header-block1 .search-bar .fa-search {
+  cursor: pointer;
+  color: #000;
+}
+header .header-block1 .connexion-button {
+  padding: 10px 15px;
+  border: 1px solid #fff;
+  border-radius: 15px;
+  background-color: #fff;
+  color: #ff8800;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+header .header-block2 {
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 10px;
+}
+header .header-block2 nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+header .header-block2 nav ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+header .header-block2 nav ul li > a {
+  text-decoration: none;
+  color: black;
+  position: relative;
+}
+header .header-block2 nav ul li > a:hover {
+  color: rgb(255, 174, 0);
+}
+header .header-block2 nav ul li > a:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: rgb(255, 174, 0);
+  transition: width 0.3s;
+}
+header .header-block2 nav ul li > a:hover:after, header .header-block2 nav ul li > a:active:after {
+  width: 100%;
+}
+header .header-block2 .social-icons {
+  display: flex;
+}
+header .header-block2 .social-icons img {
+  margin-right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+header .divider {
+  position: absolute;
+  width: 100%;
+  border: 1px solid linear-gradient(to right, #ff9100, #401ce2);
+  margin: 10px 0;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 768px) {
+  header .header-block1 {
+    flex-direction: column;
+  }
+  header .header-block1 h1 {
+    margin-bottom: 10px;
+  }
+  header .header-block1 .search-bar {
+    margin-top: 10px;
+  }
+  header .header-block1 .connexion-button {
+    margin-top: 10px;
+  }
+  header .header-block2 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  header .header-block2 nav ul li {
+    margin-right: 0;
+  }
+  header .header-block2 .social-icons i {
+    margin-right: 0;
+  }
+}
+
+aside {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+aside .login-container {
+  padding: 20px;
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+aside .login-container form {
+  display: flex;
+  flex-direction: column;
+}
+aside .login-container form .input-group {
+  margin-bottom: 15px;
+}
+aside .login-container form .input-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+aside .login-container form .input-group input,
+aside .login-container form .input-group button,
+aside .login-container form .input-group .form-select,
+aside .login-container form .input-group i {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+aside .login-container form .input-group input {
+  margin-top: 5px;
+}
+aside .login-container form .input-group button {
+  background-color: #401ce2;
+  color: #fff;
+  cursor: pointer;
+}
+aside .login-container form .input-group i {
+  font-size: 24px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+aside .login-container form button {
+  margin-top: 10px;
+}
+aside .login-container .diviseur {
+  position: relative;
+  width: 100%;
+  border: 1px solid linear-gradient(to right, #ff9100, #401ce2);
+  margin: 10px 0;
+  box-sizing: border-box;
+}
+aside .login-container .p-connexion {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
+}
+aside .login-container .social-login {
+  margin: 15px 0;
+}
+aside .login-container .social-login i {
+  font-size: 24px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+aside .login-container .forgot-password {
+  margin-bottom: 10px;
+}
+aside .login-container .forgot-password a {
+  color: #000;
+}
+aside .login-container .create-account a {
+  color: #000;
+  font-weight: bold;
+}
+
+footer {
+  background-color: #fff;
+}
+footer .text_harnix {
+  color: #ff6600;
+}
+footer .footer-block1 {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+footer .footer-block1 .left-section p {
+  margin: 0;
+}
+footer .footer-block1 .center-section nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+footer .footer-block1 .center-section nav li > a {
+  text-decoration: none;
+  color: black;
+  position: relative;
+}
+footer .footer-block1 .center-section nav li > a:hover {
+  color: rgb(255, 174, 0);
+}
+footer .footer-block1 .center-section nav li > a:active {
+  color: rgb(255, 174, 0);
+}
+footer .footer-block1 .center-section nav li > a:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: rgb(255, 174, 0);
+  transition: width 0.3s;
+}
+footer .footer-block1 .center-section nav li > a:hover:after, footer .footer-block1 .center-section nav li > a:active:after {
+  width: 100%;
+}
+footer .footer-block1 .right-section {
+  display: flex;
+}
+footer .footer-block1 .right-section i {
+  margin-right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #000000;
+}
+footer .divider {
+  width: 100%;
+  border: 1px solid #ccc;
+  margin: 0;
+}
+footer .footer-block2 {
+  text-align: center;
+  padding: 20px;
+}
+footer .footer-block2 p {
+  margin: 0;
+}
+footer .footer-block2 .footer-links a {
+  color: #000;
+  margin: 0 10px;
+}
+
+
+/* Style des éléments p-connexion */
+.p-connexion {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Style des icônes */
+.fab {
+  margin-right: 10px; /* Marge à droite des icônes pour un espacement */
+}
+
+/* Couleur des icônes Google et Facebook */
+.fab.fa-google {
+  color: #4285F4; /* Couleur Google */
+}
+
+.fab.fa-facebook {
+  color: #1877F2; /* Couleur Facebook */
+} 
+
+/*# sourceMappingURL=tout_style.css.map */

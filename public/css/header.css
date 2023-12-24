@@ -1,0 +1,192 @@
+:root{
+    --white: #FFFFFF;
+    --orange: #FC6C29;
+    --purple: #381DDB;
+    --black: #000000;
+}
+
+@font-face {
+    font-family: 'jost-bold';
+    src: url('../ressources/font/static/Jost-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'jost-medium';
+    src: url('../ressources/font/static/Jost-Medium.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'jost-light';
+    src: url('../ressources/font/static/Jost-Light.ttf') format('truetype');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "jost-bold", sans-serif;
+}
+  
+header {
+    position: relative;
+}
+
+header .header-block1 {
+    background: linear-gradient(to right, #ff9100, #401ce2);
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header .header-block1 h1 {
+    color: var(--white);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: 0em;
+    text-align: center;
+
+}
+
+header .header-block1 .search-bar {
+    display: flex;
+    align-items: center;
+    background-color: var(--white);
+    width: 600.2px;
+    height: 60px;
+    padding: 6px, 7.2px, 6px, 24px;
+    border-radius: 76.8px;
+    gap: 105.6px
+
+}
+
+header .header-block1 .search-bar input {
+    border: none;
+    padding: 8px;
+    outline: none;
+}
+
+header .header-block1 .search-bar button {
+    padding: 10px;
+    background-color: #000;
+    color: white;
+    cursor: pointer;
+    border: 1px solid #000;
+    border-radius: 76.8px;
+    width: 160px;
+    height: 48px;
+}
+
+header .header-block1 .search-bar .fa-search {
+    cursor: pointer;
+    color: #000;
+    margin-left: 5%;
+}
+
+header .header-block1 .connexion-button {
+    padding: 10px;
+    border: 1px solid var(--white);
+    background-color: var(--white);
+    color: #ff8800;
+    border: none;
+    cursor: pointer;
+    width: 160px;
+    font-size: 15.8px;
+    height: 51.2px;
+    border-radius: 51.2px;
+    gap: 8px;
+
+}
+
+header .header-block2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 15px;
+    height: 52px;
+    border-radius: 4px;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(to right, var(--orange), var(--purple)) 1;
+
+}
+
+header .header-block2 nav ul {
+    font-family: "jost-medium", sans-serif;
+    list-style: none;
+    padding: 0;
+}
+
+header .header-block2 nav ul li {
+    display: inline-block;
+    margin: 30px;
+    font-size: 18px;
+}
+
+  header .header-block2 nav ul li > a {
+    text-decoration: none;
+    color: black;
+    position: relative;
+  }
+  header .header-block2 nav ul li > a:hover {
+    color: rgb(255, 174, 0);
+    transition: all ease-in-out 0.3s;
+
+  }
+  header .header-block2 nav ul li > a:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: rgb(255, 174, 0);
+    transition: all ease-in-out 0.5s;
+  }
+  header .header-block2 nav ul li > a:hover:after, header .header-block2 nav ul li > a:active:after {
+    width: 100%;
+  }
+  header .header-block2 .social-icons {
+    display: flex;
+  }
+  header .header-block2 .social-icons img {
+    margin-right: 30px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 1008px) {
+
+    header .header-block1 h1 {
+        font-size: 20px;
+    }
+    
+    header .header-block1 .search-bar {
+        width: 350.2px;
+        gap: 6px
+    }
+    
+    header .header-block1 .search-bar button {
+        margin-left: -1cm;
+    }
+    
+    header .header-block1 .search-bar .fa-search {
+        cursor: pointer;
+        color: #000;
+        margin-left: 5%;
+    }
+    
+    header .header-block1 .connexion-button {
+        padding: 10px;
+        border: 1px solid var(--white);
+        background-color: var(--white);
+        color: #ff8800;
+        border: none;
+        cursor: pointer;
+        width: 160px;
+        font-size: 15.8px;
+        height: 51.2px;
+        border-radius: 51.2px;
+        gap: 8px;
+    }
+
+    header .header-block2 nav ul li {
+      margin: 20px;
+    }
+  }

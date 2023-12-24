@@ -1,0 +1,346 @@
+
+:root{
+    --white: #FFFFFF;
+    --orange: #FC6C29;
+    --purple: #381DDB;
+    --black: #000000;
+}
+
+@font-face {
+    font-family: 'jost-bold';
+    src: url('../ressources/font/static/Jost-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'jost-medium';
+    src: url('../ressources/font/static/Jost-Medium.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'jost-light';
+    src: url('../ressources/font/static/Jost-Light.ttf') format('truetype');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+.hero_section{
+    margin-top: 1cm;
+    margin-bottom: 1cm;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(to right, var(--orange), var(--purple)) 1;
+
+    .texte_hero p{
+        text-align: center;
+        line-height: 70px;
+    }
+    .texte_hero p:nth-child(1){
+        font-family: 'jost-bold';
+        font-size: 58px;
+    }
+    .texte_hero p:nth-child(2){
+        font-size: 22px;
+    }
+    .img_carousel{
+        display: flex;
+        justify-content: center;
+        position: relative;
+        justify-items: center;
+        margin-top: 0.5cm;
+        margin-bottom: 2cm;
+
+        .carousel-img{  
+            width: 1512px;
+            height: 758px;
+            left: 25px;
+            border-radius: 48px;
+        }
+    }
+    
+    .btndirections {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        padding: 15px;
+        background-color: white;
+        border: 0.5px solid black;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    
+    #prevBtn {
+        left: 80px;
+    }
+    
+    #nextBtn {
+        right: 80px;
+    }
+    
+
+    .dots {
+        position: absolute;
+        bottom: 10px;
+        top: 20.75cm;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+    }
+    
+    .dot {
+        width: 10px;
+        height: 10px;
+        background-color: var(--black);
+        border-radius: 50%;
+        margin: 0 5px;
+        cursor: pointer;
+    }
+    
+    .active-dot {
+        background-color: #fff;
+    }
+}
+
+.event{
+    padding: 55px 55px 0px 55px;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(to right, var(--orange), var(--purple)) 1;
+    
+    .oneConf{
+        float: right;
+        margin-right: 15%;
+        rotate: 195deg;
+    }
+    .twoConf{
+        float: right;
+        rotate: 190deg;
+        margin-top: -8%;
+    }
+    .new{
+        padding: 5px;
+        font-family: 'jost-bold';
+        color: var(--purple);
+        background-color: rgb(219, 255, 255);
+        border: 2px dashed var(--purple);
+    }
+    .txt1 {
+        font-family: 'jost-bold';
+        font-size: 50px;
+    }
+    .txt2{
+        font-family: 'jost-medium';
+        font-size: 20px;
+    }
+    .cardEvent{
+        margin-top: 2cm;
+        width: 300px;
+        height: 520px;
+        border: 2px solid black;
+        padding: 10px;
+        border-radius: 10px;
+
+        .infos h3{
+            padding: 5px;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-size: 24px;
+            font-family: 'jost-bold','sans-serif';
+        }
+        .infos .day, a{
+            padding: 5px;
+            margin-bottom: 5px;
+            color: var(--orange);
+        }
+        .infos .place{
+            padding: 5px;
+            margin-bottom: 5px;
+            font-weight:100 ;
+        }
+        .achat{
+            padding: 15px;
+            width: 5cm;
+            margin-top: 25px;
+            border-radius: 25px;
+            background-color: var(--orange);
+            cursor: pointer;
+            color: var(--white);
+            font-family: 'jost-bold','sans-serif';
+        }
+    }
+    .events{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 100px;
+    }
+    .button{
+        display: flex;
+        justify-content: center;
+    }
+    .cardEvent img{
+        width: 300px;
+        height: 252.1px;
+        top: 3.6px;
+        border-radius: 10px;
+        left: 14.5px;
+    }
+    .decouverte{
+        display: flex;
+        justify-content: center;
+        padding: 85px;
+    }
+    .decouverte button {
+        padding: 30px 50px;
+        font-size: 20px;
+        cursor: pointer;
+        font-family: 'jost-bold', sans-serif;
+        background: linear-gradient(to right, var(--orange), var(--purple));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        border: 1px solid transparent;
+        border-image: linear-gradient(to right, var(--orange), var(--purple)) 1;
+        border-radius: 50px;
+    }
+    
+}
+
+.chiffreAffaire{
+    border-top: 3px solid;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(to right, var(--orange), var(--purple)) 1;
+    padding: 65px;
+    display: flex;
+    justify-content: space-between;
+
+    .part1 {
+        .new
+        {
+            padding: 5px;
+            font-family: 'jost-bold';
+            color: var(--purple);
+            background-color: rgb(219, 255, 255);
+            border: 2px dashed var(--purple);
+        }
+        .text1{
+            font-size: 40px;
+            margin-top: 1cm;
+            margin-bottom: 0.5cm;
+            font-weight: 700;
+            line-height: 60px;
+        }
+        .text2{
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 1.5cm;
+            line-height: 27px;
+        }
+        .createEvent{
+            width: 266px;
+            height: 64px;
+            padding: 15px;
+            background-color: var(--purple);
+            border-radius: 64px;
+            color: var(--white);
+
+        }
+        .oneConf{
+            position: absolute;
+            margin: 5cm;
+        }
+    }
+
+    .part2{
+        .step{
+            font-size: 20px;
+            width: 18cm;
+            font-family: 'jost-medium', sans-serif;
+            border-left: 3px solid;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-image: linear-gradient(to right, black) 1;
+        }
+        .step span{
+            font-family: 'jost-light', sans-serif;
+            font-size: 16px;
+        } 
+    }
+    .part2 img{
+        margin-left: -25px;
+    }
+}
+
+.conInsc{
+    padding: 65px;
+    display: flex;
+    justify-content: space-between;   
+
+    .part1 img{
+        position: absolute;
+        margin-top: -4%;
+        height: 3cm;
+    }
+    .text2 span{
+        color: var(--orange);
+    }
+    .ins{
+        background-color: var(--orange);
+        font-family: 'jost-medium', sans-serif;
+        height: 64px;
+        padding: 15px;
+        font-size: 20px;
+        border-radius: 64px;
+        color: var(--white);
+    }
+    .conn{
+        margin-top: 1cm;
+        font-size: 15px;
+    }
+    .conn a{
+            color: var(--orange);
+        }
+
+}
+
+.questions{
+    display: block;
+    text-align: center;
+    border-image: linear-gradient(to right, var(--orange), var(--purple)) 1;
+    border-bottom: 3px solid;
+    padding: 55px;
+}
+
+.questions p:nth-child(1){
+    font-size: 58px;
+}
+.questions p:nth-child(2){
+    font-size: 18px;
+    margin-bottom: 2cm;
+    margin-top: 0.5cm;
+}
+.questions a{
+    padding: 15px 20px;
+    background-color: var(--purple);
+    color: var(--white);
+    border-radius: 25px;
+}
+
+.partenaires {
+    padding: 55px;
+    border-image: linear-gradient(to right, var(--orange), var(--purple)) 1;
+    border-bottom: 3px solid;
+    
+
+}
+.partenaires p{
+    font-size: 38px;
+    font-family: 'jost-bold', sans-serif;
+    text-align: center;
+    margin-bottom: 2cm;
+
+}
+.partenaires .logosPartenaires img {
+    object-position: center;
+    object-fit: contain;
+    height: 2.5cm;
+}
