@@ -11,20 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
-            
+        Schema::create('customers', function (Blueprint $table) {
+
             $table->id();
             $table->string('name');
             $table->string('phoneNumber'); 
             $table->ipAddress('address');
-            $table->dateTime('birth_year');
-            $table->string('gender');
-            $table->string('status');
-            $table->boolean('admin')->default(0);
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('email');
             $table->timestamps();
         });
     }
@@ -34,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('customers');
     }
 };

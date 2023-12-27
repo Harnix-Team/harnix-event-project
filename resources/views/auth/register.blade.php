@@ -43,7 +43,7 @@
                     
                     <!-- Confirm Password -->
                     <div class="input-group">
-                        <input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" >
+                        <input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" placeholder="Confirmer mot de passe" required autocomplete="new-password" >
                         <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
                     </div>
 
@@ -58,9 +58,22 @@
                     <!-- Gender -->
                     <div class="input-group">
                         <select class="form-select" id="sexe" name="gender" required>
-                            <option value="male">Homme</option>
-                            <option value="female">Femme</option>
-                            <option value="other">Autre</option>
+                            <option value="Homme">Homme</option>
+                            <option value="Femme">Femme</option>
+                            <option value="Autre">Autre</option>
+                        </select>                    
+                    </div>
+
+                    <!-- Bio -->
+                    <div class="input-group">
+                        <select class="form-select" id="status" name="status" required>
+                            <option value="Promoteur Evénementielle">Promoteur Evénementielle</option>
+                            <option value="Formateur">Formateur</option>
+                            <option value="Participant">Participant</option>
+                            <option value="Agence Evenementielle">Agence Evenementielle</option>
+                            <option value="Conférencier">Conférencier</option>
+                            <option value="Commerciaux">Commerciaux</option>
+                            <option value="Autre">Autre</option>
                         </select>                    
                     </div>
 
@@ -71,12 +84,12 @@
 
                     <!-- Localisation -->
                     <div class="input-group">
-                        <input type="locale_get_region" id="localisation" name="Localisation" placeholder="Localisation" required>
+                        <input type="adresse" id="adresse" name="localisation" placeholder="Pays, lieu de résidence" required>
                     </div>
 
                     <!-- Numero de téléphone -->
                     <div class="input-group">
-                        <input type="number" id="telephone" name="telephone" placeholder="telephone" required>
+                        <input type="tel" id="telephone" name="telephone" placeholder="telephone(Ex:00229 000 000 00)" required>
                     </div>
                     
 
@@ -94,8 +107,8 @@
 
            
             <hr class="diviseur" ><br/>
-            <div class="p-connexion"> <i class="fab fa-google"></i> Se connecter avec Google</div> <br/>
-            <div class="p-connexion"> <i class="fab fa-facebook"></i> Se connecter avec Facebook</div>
+            <a href="{{ route('login.google') }}"><div class="p-connexion"> <i class="fab fa-google"></i> Se connecter avec Google</div></a> <br/>
+            <a href="{{ route('login.facebook') }}"><div class="p-connexion"> <i class="fab fa-facebook"></i> Se connecter avec Facebook</div></a>
             <br/>
            
             <div class="create-account">

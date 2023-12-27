@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>Profil</title>
+        <title>{{ config('app.name', 'Ticketche')}} >> @yield('title')</title>
         
        
         <!-- Content style  -->
@@ -37,13 +37,14 @@
         </header>
         <div class="grid">
             <section class="profil_presentation">
-                <img src="{{asset('img/content/profile.png')}}" alt="Profil image" class="profil_presentation__profile">
+                <img src="{{asset('img/content/icons8-avatar-96.png')}}" alt="Profil image" class="profil_presentation__profile">
                 <img src="{{asset('img/content/banner.png')}}" alt="Profil banner" class="profil_presentation__banner">
         
                 <div class="profil_presentation__informations">
                     <div class="job">
                         <h2 class="name">{{ Auth::user()->name }}</h2>
-                        <p class="work">{{ Auth::user()->email }}</p>
+                        <p class="work"><b>{{Auth::user()->status}} </b> <br>{{ Auth::user()->email }} </p>
+
                     </div>
 
                     @if( Route::currentRouteName() == 'profil')
@@ -54,7 +55,17 @@
                             </button>
                         </a>
                     @else
-                        @if(session('email_verified_at') == "NULL")
+                        @if(Auth::user()->email_verified_at != false)
+                        <!-- {{var_dump(Auth::user()->email_verified_at)}} -->
+                            <a href="{{route('profile.edit')}}">
+                                <button>
+                                    <span>Tableau de Bord</span>
+                                    <img src="{{asset('img/content/cil_pencil.svg')}}" alt="pen icon">
+                                </button>
+                            </a>
+                            
+                        @else
+
                             <!-- form to confirm account -->
                             <form id="send-verification" method="post" action="{{ route('verification.send') }}">
                             @csrf
@@ -68,13 +79,7 @@
                                     </p>
                                 @endif
                             </form>
-                        @else
-                            <a href="{{route('profile.edit')}}">
-                                <button>
-                                    <span>Tableau de Bord</span>
-                                    <img src="{{asset('img/content/cil_pencil.svg')}}" alt="pen icon">
-                                </button>
-                            </a>
+                            
                         @endif
                     @endif
                 </div>
@@ -87,20 +92,20 @@
         
                     <div class="data">
                         <img src="{{asset('img/content/sex.png')}}" alt="Logo sex">
-                        <span>Homme</span>
+                        <span>{{Auth::user()->gender}}</span>
                     </div> 
                     <div class="data">
                         <img src="{{asset('img/content/date.png')}}" alt="Logo date">
-                        <span>26 Juin 1998</span>
+                        <span>{{ substr(Auth::user()->birth_year,0,10) }}</span>
                     </div>
                     <div class="data">
                         <img src="{{asset('img/content/location.png')}}" alt="Logo localisation">
-                        <span>Cotonou, Gbegamey</span>
+                        <span>{{Auth::user()->address}}</span>
                     </div>
                     
                     <div class="data">
                         <img src="{{asset('img/content/telephone.png')}}" alt="Logo phone">
-                        <span>44 00 33 90</span>
+                        <span>{{Auth::user()->phoneNumber}}</span>
                     </div>
         
                 </div>

@@ -19,10 +19,23 @@
 
 
                 <!-- localisation -->
-                <input type="text" name="adresse" id="adresse" placeholder="Adresse">
+                <x-text-input id="adresse" name="address" type="text" class="mt-1 block w-full" :value="old('address', $user->address)" required autofocus autocomplete="address" />
+                <x-input-error class="mt-2" :messages="$errors->get('address')" />
+               
 
                 <!-- phone number -->
-                <input type="tel" name="telephone" id="telephone" placeholder="Téléphone">
+                <x-text-input id="tel" name="phoneNumber" type="text" class="mt-1 block w-full" :value="old('phoneNumber', $user->phoneNumber)" required autofocus autocomplete="phoneNumber" />
+                <x-input-error class="mt-2" :messages="$errors->get('phoneNumber')" />
+
+
+                <!-- Status-->
+                <x-text-input id="text" name="status" type="text" class="mt-1 block w-full" :value="old('status', $user->status)" required autofocus autocomplete="status" />
+                <x-input-error class="mt-2" :messages="$errors->get('status')" />
+
+                <!-- Date-->
+                <x-text-input id="date" name="birth_year" type="text" class="mt-1 block w-full" :value="old('birth_year',  substr(Auth::user()->birth_year,0,10))" required autofocus autocomplete="birth_year" />
+                <x-input-error class="mt-2" :messages="$errors->get('birth_year')" />
+               
 
 
             </div>

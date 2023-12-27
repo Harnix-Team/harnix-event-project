@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Ticketche')}} || @yield('title')</title>
+        <title>{{ config('app.name', 'Ticketche')}} >> @yield('title')</title>
         
        
         <!-- Content style  -->
@@ -33,7 +33,9 @@
                 @if (Route::has('login'))
                 <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
                     @auth
-                        <a href="{{ url('/profil') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"><button class="connexion-button">Profil</button></a>
+                    
+                        <a href="{{ url('/profil') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"><img src="{{asset('img/content/icons8-avatar-96.png')}}" alt="Profil image" class="profil_presentation__profile"></a>
+                        <!-- <button class="connexion-button"></button> -->
                     @else
                         <a href="{{ route('login') }}"><button class="connexion-button">Connexion</button></a> 
 

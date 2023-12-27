@@ -24,7 +24,7 @@
                 <!-- Email input -->
                 <div class="input-group">
 
-                    <input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus>
+                    <input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" placeholder="Email" required autofocus>
                     <x-input-error :messages="$errors->get('email')" class="mt-2" />
 
                 </div>
