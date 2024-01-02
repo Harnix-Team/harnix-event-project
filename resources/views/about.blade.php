@@ -82,7 +82,7 @@
         <div class="part1">
             <p>Tagline</p>
             <p>Comment scanner les tickets en toute sécurité ? </p>
-            <a class="btnApropos" href="#">Créer un événement </a>
+            <a class="btnApropos" href="{{ route('create-event') }}">Créer un événement </a>
             <img src="{{asset('img/content/scan.jpg')}}" alt="">
 
         </div>

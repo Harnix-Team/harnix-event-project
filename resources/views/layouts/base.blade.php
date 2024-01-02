@@ -6,8 +6,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <link rel="icon" type="image/png" href="{{asset('img/sociallink/logo.SVG')}}">
 
         <title>{{ config('app.name', 'Ticketche')}} >> @yield('title')</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
         
        
         <!-- Content style  -->
@@ -24,7 +27,7 @@
         <header>
 
             <div class="header-block1">
-                <h1>HARNIX-EVENTS</h1>
+                <h1><a href="/">HARNIX-EVENTS</a></h1>
                 <div class="search-bar">
                     <i class="fa fa-search"></i> 
                     <input type="text" placeholder="Rechercher un événement">
@@ -52,8 +55,15 @@
                     <ul>
                         <li><a href="/">Accueil</a></li>
                         <li><a href="/events">Événements</a></li>
+                        <li><a href="#">CanalOlympia</a></li>
                         <li><a href="/about">À propos</a></li>
-                        <li><a href="#">Contact</a></li>
+
+                        @if (Route::has('login'))
+                            @auth
+                                <li><a href="{{route('dashboard')}}">Tableau de Bord</a></li>
+                            @endauth
+                        @endif
+
                     </ul>
                 </nav>
                 <div class="social-icons">
@@ -75,35 +85,37 @@
 
         <!-- Footer -->
         <footer>
+            <hr class="divider">
             <div class="footer-block1">
                 <div class="left-section">
-                    <p class="text_harnix">HARNIX - EVENTS</p>
+                    <p  class="text_harnix"><strong>HARNIX-EVENTS</strong></p>
                 </div>
                 <div class="center-section">
                     <nav>
                         <ul>
-                            <li><a href="/">Accueil</a></li>
-                            <li><a href="/events">Événements</a></li>
-                            <li><a href="/about">À propos</a></li>
+                            <li><a href="#">Accueil</a></li>
+                            <li><a href="">Événements</a></li>
+                            <li><a href="">À propos</a></li>
                             <li><a href="#">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
                 <div class="right-section">
                     <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram"></i>
                     <i class="fab fa-linkedin"></i>
-                    <i class="fab fa-x"></i>
+                    <i class="fab fa-youtube"></i>
                 </div>
             </div>
             <hr class="divider">
-            <div class="footer-block2"><br>
+            <div class="footer-block2">
                 <p>2023 Harnix. All rights reserved.
                 <span class="footer-links">
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms of Service</a>
                     <a href="#">Cookies Settings</a>
                 </span></p>
-            </div><br>
+            </div>
         </footer>
 
         <!-- End Footer -->

@@ -105,7 +105,7 @@
             <!-- End Event Cards -->
 
             <div class="decouverte">
-                <button><a href="events.html">Découvrir plus ...</a> </button>
+                <button><a href="/events">Découvrir plus ...</a> </button>
             </div>
             <img class="twoConf" src="{{asset('img/content/Confettiblue.svg')}}" alt="">
         </div>
@@ -117,7 +117,7 @@
                 <span class="new"> Augmentez votre chiffre d'affaire ! </span>
                 <p class="text1"> Vous organisez des événements ? </p>
                 <p class="text2"> Créez vos événements en un clic ! </p>
-                <a class="createEvent" href="#"> Créez votre événement </a>
+                <a class="createEvent" href="{{ route('create-event') }}"> Créez votre événement </a>
                 <img class="oneConf" src="{{asset('img/content/Confettiblue.svg')}}" alt=""><br><br>
                 <img class="oneConf" src="{{asset('img/content/Confetti.png')}}" alt="">
             </div>

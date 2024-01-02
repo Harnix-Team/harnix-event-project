@@ -17,13 +17,15 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('name');
+            $table->string('agency');
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('event_categories')->onDelete('cascade');
             $table->longText('description');
-            $table->timestamp('date');
-            $table->string('place');
-            $table->string('hour');
             $table->string('img');
+            $table->string('place');
+            $table->string('date_begin');
+            $table->string('date_end');
+            $table->string('tags');
             $table->timestamps();
             
         });
@@ -34,6 +36,12 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('events');
+        Schema::table('events', function (Blueprint $table) {
+
+            $table->dropColumn('date_begin');
+            $table->dropColumn('date_end');
+            $table->dropColumn('tags');
+        });
+        
     }
 };

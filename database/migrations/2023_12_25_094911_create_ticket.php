@@ -14,12 +14,14 @@ return new class extends Migration
         Schema::create('tickets', function (Blueprint $table) {
            
             $table->id();
-            $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('tickets_categories')->onDelete('cascade');
+            $table->string('category');
+            $table->unsignedBigInteger('event_id');
+            $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
             $table->string('name');
+            $table->string('description');
             $table->Integer('price');
             $table->Integer('totalNumber');
-            $table->Integer('buyNumber');
+            $table->Integer('buyNumber')->default(0);
             $table->timestamps();
             
         });
@@ -30,6 +32,10 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tickets');
+        Schema::table('tickets', function (Blueprint $table) {
+
+            $table->dropColumn('event_id');
+         
+        });
     }
 };
