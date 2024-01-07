@@ -38,7 +38,7 @@
         <div class="grid">
 
             <aside>
-
+                
                 <div class="step_box step_box__active"> <div  class="step_number" >3</div> <span class="step_name"> Prévisualisation</span></div>
                 <div class="step_box "> <div  class="step_number" >4</div> <span class="step_name">Boostez votre Evenement</span></div>
              <!--   <button class="step_box step_box__active"> <div  class="step_number" >1</div> <span class="step_name">Informations de base</span> </button>
@@ -59,7 +59,7 @@
 
                             <div class=" create_event__informations left_informations">
 
-                                <h1>{{$event['name']}}</h1>
+                                <h1>{{$event->name}}</h1>
 
                                 <img  src="{{ asset($event['img']) }}" alt="">
 
@@ -101,8 +101,7 @@
                                     <div class="place_visualisation">{{$event['place']}}</div>
 
                                     <div class="date_time_visualisation">
-                                        <span class="date">Du {{$event['date_begin']}} </span>
-                                        <span class="time_visualisation">Au {{$event['date_end']}}</span>
+                                        {{ \Carbon\Carbon::parse($event['date_begin'])->format('l d F \à H\h') }} - {{ \Carbon\Carbon::parse($event['date_end'])->format('l d F \à H\h') }}
                                     </div>
         
                                 </div>
@@ -130,7 +129,8 @@
                         </div>
 
                         <div class="modification_profile__submit_modifications">
-                            <button type="button" onclick="event.preventDefault(); this.closest('form').submit();">Continuer</button>
+                        <a class="gerer-event-btn" href="{{ route('event.edit', ['id' => $event['id']]) }}"><button type="button">Editer</button></a>
+                            <button type="button">Valider</button>
                         </div>
 
                     </div>
@@ -158,9 +158,10 @@
                         </div>
 
                         <div class="modification_profile__submit_modifications">
-                            <a class="gerer-event-btn" href="{{ route('event.edit', ['id' => $currentEvent['id']]) }}">Editer</a>
+                            
+                           
+                            <a class="gerer-event-btn" href="{{ route('dashboard') }}">Tableau de Bord </a>
 
-                            <button type="submit">Publier</button>
                         </div>
 
                     </div>

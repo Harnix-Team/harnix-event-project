@@ -30,7 +30,7 @@
                 <h1><a href="/">HARNIX-EVENTS</a></h1>
                 <div class="search-bar">
                     <i class="fa fa-search"></i> 
-                    <input type="text" placeholder="Rechercher un événement">
+                    <input type="text" id="searchInput" placeholder="Rechercher(nom,lieu,date,promoteur)">
                     <button>Rechercher</button>
                 </div>
                 @if (Route::has('login'))
@@ -117,10 +117,10 @@
                 </span></p>
             </div>
         </footer>
-
+        
         <!-- End Footer -->
         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
         <script src="{{asset('js/carousel.js')}}"></script>
-    </body>
+       
 </html>

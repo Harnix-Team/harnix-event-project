@@ -43,7 +43,7 @@
                                             <div class="class-info">
                                                 <div class="class-sous-info">
                                                     <p><strong>Date</strong></p>
-                                                    <p>{{$currentEvent['date_begin']}}</p>
+                                                    <p>{{ \Carbon\Carbon::parse($currentEvent['date_begin'])->format('l d F \à H\h') }}</p>
                                                 </div>
                                                 <div class="class-sous-info">
                                                     <p><strong>Lieu</strong></p>
@@ -108,7 +108,7 @@
                                         <div class="class-info">
                                             <div class="class-sous-info">
                                                 <p><strong>Date</strong></p>
-                                                <p>{{$passEvent['date_begin']}}</p>
+                                                <p>{{ \Carbon\Carbon::parse($passEvent['date_begin'])->format('l d F \à H\h') }}</p>
                                             </div>
                                             <div class="class-sous-info">
                                                 <p><strong>Lieu</strong></p>

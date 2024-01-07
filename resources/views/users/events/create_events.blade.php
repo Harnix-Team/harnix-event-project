@@ -69,9 +69,11 @@
                                     <div class="input_form">
                                         <label for="nom">Nom de l'événement <span>*</span> </label>
                                         <input type="text" name="event_name" id="nom" placeholder="" value="{{ old('event_name') }}" required>
+                                        <br><br>
                                         @error('event_name')
                                             <span style="color: red;" class="error">{{ $message }}</span>
                                         @enderror
+                                        <br>
                                     </div>
 
                                     <div class="input_form">
@@ -82,17 +84,21 @@
                                                 
                                             @endforeach
                                         </select>
+                                        <br><br>
                                         @error('event_type')
                                             <span style="color: red;" class="error">{{ $message }}</span>
                                         @enderror
+                                        <br>
                                     </div>
 
                                     <div class="input_form description">
                                         <label for="description">Description de l'événement <span>*</span> </label>
-                                        <textarea name="event_description" id="description" cols="30" required value="{{ old('event_description') }}" rows="10"></textarea>
+                                        <textarea name="event_description" id="description" cols="30" required value="{{ old('event_description') }}" rows="10">{{ old('event_description') }}</textarea>
+                                        <br><br>
                                         @error('event_description')
                                             <span style="color: red;" class="error">{{ $message }}</span>
                                         @enderror
+                                        <br>
                                     </div>
                                 </div>
 
@@ -102,26 +108,30 @@
                                     <div class="input_form">
                                         <label for="nom">Nom de l'Agence/Promoteur <span>*</span> </label>
                                         <input type="text" name="agency" id="nom" placeholder="{{ Auth::user()->name }}" value="{{ Auth::user()->name }}" required>
+                                        <br><br>
                                         @error('agency')
                                             <span style="color: red;" class="error">{{ $message }}</span>
                                         @enderror
+                                        <br>
                                     </div>
 
 
                                     <div class="event_info__event_banner">
                                         <input type="file" hidden name="img_event" id="file" value="{{ old('img_event') }}" required>
                                         <label for="file">Choisir la bannière (affiche de l'événement)<img src="{{asset('img/content/upload.png')}}" alt=""></label>
-                                        @error('img_event')
-                                            <span style="color: red;" class="error">{{ $message }}</span>
-                                        @enderror
                                     </div>
-
+                                    @error('img_event')
+                                        <span style="color: red;" class="error">{{ $message }}</span>
+                                    @enderror
+                                    
                                     <div class="input_form">
                                         <label for="tags">Ajoutez des tags, séparés par une virgule <span>*</span> </label>
                                         <input type="text" name="tags" id="tags" value="{{ old('tags') }}" placeholder="">
+                                        <br><br>
                                         @error('tags')
                                             <span style="color: red;" class="error">{{ $message }}</span>
                                         @enderror
+                                        <br>
                                     </div>
 
                                 </div>
@@ -137,17 +147,21 @@
                                     <div class="input_form">
                                         <label for="lieu">Nom du lieu de l’événement<span>*</span> </label>
                                         <input type="text" name="event_place" id="lieu" value="{{ old('event_place') }}" placeholder="">
+                                        <br><br>
                                         @error('event_place')
                                             <span style="color: red;" class="error">{{ $message }}</span>
                                         @enderror
+                                        <br>
                                     </div>
 
                                     <div class="input_form">
                                         <label for="adresse">Adresse Lieu <span>*</span> </label>
                                         <input type="text" name="adresse" id="adresse" placeholder="" value="{{ old('adresse') }}">
+                                        <br><br>
                                         @error('adresse')
                                             <span style="color: red;" class="error">{{ $message }}</span>
                                         @enderror
+                                        <br>
                                     </div>
 
                                 </div>
@@ -160,33 +174,41 @@
                                     <div class="input_form event_info__date">
                                         <label for="date">Ajoutez la date de début<span>*</span> </label>
                                         <input type="date" name="begin_date" id="date" placeholder="" value="{{ old('begin_date') }}">
+                                        <br><br>
                                         @error('begin_date')
                                             <span style="color: red;" class="error">{{ $message }}</span>
                                         @enderror
+                                        <br>
                                     </div>
 
                                     <div class="input_form event_info__time">
                                         <label for="time">Heure de l'événement <span>*</span> </label>
                                         <input type="time" name="begin_time" id="time" value="{{ old('begin_time') }}" placeholder="Date de l'événement">
+                                        <br><br>
                                         @error('begin_time')
                                             <span style="color: red;" class="error">{{ $message }}</span>
                                         @enderror
+                                        <br>
                                     </div>
 
                                     <div class="input_form event_info__date">
                                         <label for="date">Ajoutez la date de fin<span>*</span> </label>
                                         <input type="date" name="end_date" id="date" placeholder="" value="{{ old('end_date') }}">
+                                        <br><br>
                                         @error('end_date')
                                             <span style="color: red;" class="error">{{ $message }}</span>
                                         @enderror
+                                        <br>
                                     </div>
 
                                     <div class="input_form event_info__time">
                                         <label for="time">Heure de fin <span>*</span> </label>
                                         <input type="time" name="end_time" id="time" placeholder="Date de l'événement" value="{{ old('end_time') }}">
+                                        <br><br>
                                         @error('end_time')
                                             <span style="color: red;" class="error">{{ $message }}</span>
                                         @enderror
+                                        <br>
                                     </div>
 
                                     <!-- <button type="button" ><img  src="{{asset('img/content/plus.png')}}" alt=""> Ajouter une date </button> -->
@@ -220,25 +242,31 @@
 
                                             @endforeach
                                         </select>
+                                        <br><br>
                                         @error('ticket_names')
                                             <span style="color: red;" class="error">{{ $message }}</span>
                                         @enderror
+                                        <br>
                                     </div>
 
                                     <div class="input_form">
                                         <label for="prix">Prix du ticket <span>*</span> </label>
                                         <input type="number" name="prix" id="prix" class="prix_ticket"  placeholder="" required aria-label="Prix du ticket">
+                                        <br><br>
                                         @error('ticket_prices')
                                             <span style="color: red;" class="error">{{ $message }}</span>
                                         @enderror
+                                        <br>
                                     </div>
 
                                     <div class="input_form description">
                                         <label for="description">Description du ticket <span>*</span> </label>
-                                        <textarea name="description" id="description" cols="30" rows="10" class="ticket_description"  required aria-label="Description du ticket"></textarea>
+                                        <textarea name="description" id="description" cols="30" rows="10" class="ticket_description"  required aria-label="Description du ticket">{{ old('description') }}</textarea>
+                                        <br><br>
                                         @error('ticket_description')
                                             <span style="color: red;" class="error">{{ $message }}</span>
                                         @enderror
+                                        <br>
                                     </div>
                                 </div>
 
@@ -249,9 +277,11 @@
                                     <div class="input_form">
                                         <label for="ticket_number">Nombre de ticket <span>*</span> </label>
                                         <input type="number" name="ticket_number" id="ticket_number" class="ticket_number"  required aria-label="Nombre de tickets à vendre">
+                                        <br><br>
                                         @error('ticket_numbers')
                                             <span style="color: red;" class="error">{{ $message }}</span>
                                         @enderror
+                                        <br>
                                     </div>
                                     <button type="button" class="adding_button adding_ticket__button" aria-label="Ajouter un ticket">
                                         <img src="{{asset('img/content/plus.png')}}" alt=""> Ajouter un ticket

@@ -165,7 +165,7 @@
                     <div class="aside__notifications">
                         Notifications
 
-                        <div class="aside__notifications__number">0</div>
+                        <div class="aside__notifications__number">+1</div>
                     </div>
                 </a>
 

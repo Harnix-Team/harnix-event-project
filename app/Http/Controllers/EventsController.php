@@ -10,9 +10,7 @@ use App\Models\TicketCategory;
 use App\Models\TicketsCategory;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
-Carbon::setLocale('fr');
 
 
 class EventsController extends Controller
@@ -23,12 +21,26 @@ class EventsController extends Controller
      */
     public function index()
     {
-        $events = Event::all();
+        $eventCategories = EventCategory::all(); 
+
+        $events = Event::where('date_end', '>=', now())->orderBy('created_at', 'desc')->get();
 
         // return all events
-        return view('events', compact('events'));
+        return view('events', compact('events', 'eventCategories'));
     }
 
+
+    public function displayInHome()
+    {
+        $eventCategories = EventCategory::all(); 
+
+        $events = Event::where('date_end', '>=', now('UTC'))
+        ->orderBy('created_at', 'desc')
+        ->take(4) 
+        ->get();
+        // return all events
+        return view('home', compact('events', 'eventCategories'));
+    }
     /**
      * Show the form for creating a new resource.
      */
@@ -53,7 +65,7 @@ class EventsController extends Controller
             'event_name' => ['required', 'string', 'max:255'],
             'event_type' => ['required', 'numeric'],
             'event_description' => ['required', 'string'],
-            'img_event' => ['required', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
+            'img_event' => ['required', 'image', 'mimes:jpeg,png,jpg,gif', 'max:10000'],
             'tags' => ['required', 'string', 'max:255'],
             'event_place' => ['required', 'string', 'max:255'],
             'agency' => ['required', 'string', 'max:255'],
@@ -87,8 +99,8 @@ class EventsController extends Controller
             'description' => $request->event_description,
             'tags' => $request->tags,
             'place' => $request->event_place.','.$request->adresse,
-            'date_begin' => Carbon::parse($request->begin_date.' '.$request->begin_time)->format('l j F \à H \h\e\u\r\e\s'),
-            'date_end' =>Carbon::parse($request->end_date.' '.$request->end_time)->format('l j F \à H \h\e\u\r\e\s'), 
+            'date_begin' => $request->begin_date.' '.$request->begin_time,
+            'date_end' => $request->end_date.' '.$request->end_time, 
         ]);
 
         // create tickets of event
@@ -117,8 +129,8 @@ class EventsController extends Controller
      */
     public function show(string $id)
     {
-        $event = Event::findOrFail($id);
-        
+        $event = Event::where('user_id', auth()->id())->findOrFail($id);
+        // dd($event)
         $ticketsData = Ticket::where('event_id',$id)->get();
 
         // Return view to preview event
@@ -129,11 +141,11 @@ class EventsController extends Controller
     public function showForDash()
     {
         $currentEvents = Event::where('user_id', auth()->id())
-            ->where('date_begin', '>=', now()) 
+            ->where('date_end', '>=', now()) 
             ->get();
-    
+            // dd($currentEvents);
         $passEvents = Event::where('user_id', auth()->id())
-            ->where('date_begin', '<', now())
+            ->where('date_end', '<', now())
             ->get();
     
         return view('users.dashboard', compact('currentEvents', 'passEvents'));
@@ -146,7 +158,7 @@ class EventsController extends Controller
     public function edit(string $id)
     {
         //
-        $event = Event::findOrFail($id);
+        $event = Event::where('user_id', auth()->id())->findOrFail($id);
         
         $ticketsData = Ticket::where('event_id',$id)->get();
 
@@ -175,7 +187,7 @@ class EventsController extends Controller
         ]);
 
         // Fetch the existing event
-        $event = Event::findOrFail($request->id);
+        $event = Event::where('user_id', auth()->id())->findOrFail($request->id);
 
         // Update the event data
         $event->update([
@@ -222,7 +234,7 @@ class EventsController extends Controller
         $ticketsToDelete = array_diff($existingTicketIds, $newTicketIds);
         Ticket::destroy($ticketsToDelete);
 
-        return redirect()->route('dashboard')->with('success', 'L\'événement a été mis à jour avec succès !');
+        return redirect()->route('event.show', ['id' => $event->id])->with('success', 'L\'événement a été mis à jour avec succès !');
     }
 
 
@@ -233,7 +245,7 @@ class EventsController extends Controller
     {
         
         // Find the event by ID
-        $event = Event::findOrFail($id);
+        $event = Event::where('user_id', auth()->id())->findOrFail($id);
 
         // Delete the event
         $event->delete();

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Notification;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -52,6 +53,15 @@ class RegisteredUserController extends Controller
             'gender' => $request->gender,
             'status' => $request->status,
             'password' => Hash::make($request->password),
+        ]);
+
+        $notification = Notification::create([
+
+            'user_id' => $user->id,
+            'title' => "Bienvenue Sur H-Event",
+            'content' => "Nous vous réservons de très bonne suporise. Cliquez pour découvrir",
+            'referTo' => '/events',
+            
         ]);
 
         event(new Registered($user));

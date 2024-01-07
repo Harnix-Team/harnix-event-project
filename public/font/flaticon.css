@@ -1,0 +1,85 @@
+@font-face {
+    font-family: "flaticon";
+    src: url("./flaticon.ttf?2772f40c1a31d45dd717e2c2fe598db3") format("truetype"),
+url("./flaticon.woff?2772f40c1a31d45dd717e2c2fe598db3") format("woff"),
+url("./flaticon.woff2?2772f40c1a31d45dd717e2c2fe598db3") format("woff2"),
+url("./flaticon.eot?2772f40c1a31d45dd717e2c2fe598db3#iefix") format("embedded-opentype"),
+url("./flaticon.svg?2772f40c1a31d45dd717e2c2fe598db3#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight:normal;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-archer:before {
+    content: "\f101";
+}
+.flaticon-chess-pieces:before {
+    content: "\f102";
+}
+.flaticon-coding:before {
+    content: "\f103";
+}
+.flaticon-computer:before {
+    content: "\f104";
+}
+.flaticon-customer-satisfaction:before {
+    content: "\f105";
+}
+.flaticon-data-driven:before {
+    content: "\f106";
+}
+.flaticon-facebook-app-symbol:before {
+    content: "\f107";
+}
+.flaticon-flowchart:before {
+    content: "\f108";
+}
+.flaticon-instagram:before {
+    content: "\f109";
+}
+.flaticon-linkedin:before {
+    content: "\f10a";
+}
+.flaticon-loupe:before {
+    content: "\f10b";
+}
+.flaticon-market-research:before {
+    content: "\f10c";
+}
+.flaticon-medal:before {
+    content: "\f10d";
+}
+.flaticon-money:before {
+    content: "\f10e";
+}
+.flaticon-optimization:before {
+    content: "\f10f";
+}
+.flaticon-phone-call:before {
+    content: "\f110";
+}
+.flaticon-placeholder:before {
+    content: "\f111";
+}
+.flaticon-research:before {
+    content: "\f112";
+}
+.flaticon-shopping-cart:before {
+    content: "\f113";
+}
+.flaticon-twitter:before {
+    content: "\f114";
+}
+.flaticon-video-call:before {
+    content: "\f115";
+}
+.flaticon-youtube:before {
+    content: "\f116";
+}
+
